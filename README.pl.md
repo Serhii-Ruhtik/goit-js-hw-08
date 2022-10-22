@@ -1,4 +1,4 @@
-<!-- # Parcel template
+# Parcel template
 
 Ten projekt został stworzony przy pomocy Parcel. W celu zapoznania się i
 skonfigurowania dodatkowych opcji [zobacz dokumentację](https://parceljs.org/)
@@ -100,4 +100,4 @@ właściwości `homepage` lub skryptu `build` w pliku `package.json`.
    inicjalizuje się i buduje przed deploymentem.
 3. Jeżeli wszystkie kroki zakończyły się sukcesem, zbudowana wersja produkcyjna
    plików projektu wysyła się w gałąź `gh-pages`. W przeciwnym razie, w logu
-   wykonania skryptu wskazane zostanie, w czym jest problem. -->
+   wykonania skryptu wskazane zostanie, w czym jest problem.
