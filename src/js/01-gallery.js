@@ -5,7 +5,6 @@ import SimpleLightbox from 'simplelightbox';
 // Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
 console.log(galleryItems);
-console.log(SimpleLightbox);
 const gallery = document.querySelector('.gallery');
 const imgGallery = CreateAndRenderMarkupGallery(galleryItems);
 
@@ -20,27 +19,17 @@ function CreateAndRenderMarkupGallery(galleryItems) {
                 <img
                     class="gallery__image"
                     src="${preview}"
-                    data-source="${original}"
                     alt="${description}"
                 />
             </a>
         </div >
 `;
     })
-    .join('');
-}
+      .join('');
+};
 
-// gallery.addEventListener('click', onImageClick);
-
-// function onImageClick(event) {
-//   event.preventDefault();
-//   if (event.target.nodeName !== 'IMG') {
-//     return;
-//   }
-
-//   const instance = basicLightbox.create(`
-//     <img src = "${event.target.dataset.source}"> width = "800" height = "600"
-//     `);
-//   instance.show();
-//   console.log(event);
-// }
+let galleryRef = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+    });
+galleryRef.on('show.simplelightbox');
