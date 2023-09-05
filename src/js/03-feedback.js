@@ -1,51 +1,53 @@
-console.log(localStorage);
+// console.log(localStorage);
 
-localStorage.setItem('key', JSON.stringify({ name: 'mango', egt: 2 }));
+// localStorage.setItem('key', JSON.stringify({ name: 'mango', egt: 2 }));
 
-const savedData = localStorage.getItem('key');
-console.log('savedData', savedData);
+// const savedData = localStorage.getItem('key');
+// console.log('savedData', savedData);
 
-const parsedData = JSON.parse(savedData);
-console.log('parsedData', parsedData);
+// const parsedData = JSON.parse(savedData);
+// console.log('parsedData', parsedData);
 
 // ===========================================
+const STORAGE_KEY = 'feedback-form-state';
 
-// const refs = {
-//   form: document.querySelector('.feedback-form'),
-//   textarea: document.querySelector('.feedback-form textarea'),
-// };
 
-// refs.form.addEventListener('submit', onFormSabmit);
-// refs.textarea.addEventListener('input', onTextareaImput);
+const refs = {
+  form: document.querySelector('.feedback-form'),
+  textarea: document.querySelector('.feedback-form textarea'),
+};
 
-// // populateTextarea();
+refs.form.addEventListener('submit', onFormSabmit);
+refs.textarea.addEventListener('input', onTextareaInput);
 
-// // функція відправки форми
-// function onFormSabmit(event) {
-//   event.preventDefault();
-//   //   console.log(event);
-//   event.currentTarget.reset();
-//   localStorage.removeItem('feedback-form-state');
-// }
+populateTextarea();
 
-// // функція запису localStorage
-// function onTextareaImput(event) {
-//   const message = event.Target.value;
-//   localStorage.setItem('feedback-form-state', message);
+// функція відправки форми
+function onFormSabmit(event) {
+  event.preventDefault();
+  //   console.log(event);
+  event.currentTarget.reset();
+  localStorage.removeItem(STORAGE_KEY);
+}
+
+// функція запису localStorage
+function onTextareaInput(event) {
+  const message = event.target.value;
+  localStorage.setItem(STORAGE_KEY, message);
 //   console.log(value);
-// }
+}
 
-// // функція отримуємо дані сховища
-// // якщо(if) буди ветаємо в DOM
-// function populateTextarea() {
-//   const savedMessage = localStorage.getItem('feedback-form-state');
+// функція отримуємо дані сховища
+// якщо(if) буди ветаємо в DOM
+function populateTextarea() {
+  const savedMessage = localStorage.getItem(STORAGE_KEY);
 
 //   console.log(savedMessage);
 
-//   if (savedMessage) {
-//     refs.textarea.value = savedMessage;
-//   }
-// }
+  if (savedMessage) {
+    refs.textarea.value = savedMessage;
+  }
+}
 
 // const STORAGE_KEY = 'feedback-msg';
 
