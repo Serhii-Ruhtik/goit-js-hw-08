@@ -32,4 +32,4 @@ let galleryRef = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
     captionDelay: 250,
     });
-galleryRef.on('show.simplelightbox');
+galleryRef.on('show.simplelightbox');3
